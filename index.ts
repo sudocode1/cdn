@@ -4,15 +4,18 @@ import fs from 'fs';
 let app = express();
 const fileUpload = require('express-fileupload');
 
-let staticPages = {
-    'index': fs.readFileSync('./public/index.html', 'utf-8')
-}
 
 app.use(require('body-parser').urlencoded({ extended: false, limit: '10mb' }));
 app.use(fileUpload({ debug: false }));
 
 app.get('/', (req, res) => {
-    res.send(staticPages.index);
+    res.send(`
+    <form method="post" action="/upload" encType="multipart/form-data" >
+    <input name="f" type="file" multiple="multiple"> <br>
+    Key: <input name="key" type="password"> <br>
+    <button class="submitButton" type="submit">Upload</button>
+    </form>
+    `);
 });
 
 app.post('/upload', (req, res) => {
