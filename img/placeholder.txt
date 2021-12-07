@@ -1,0 +1,1 @@
+This is simply a placeholder so the img folder uploads to GitHub.
