@@ -1,6 +1,5 @@
 require('dotenv').config();
-import express from 'express';
-import fs from 'fs';
+import * as express from 'express';
 let app = express();
 const fileUpload = require('express-fileupload');
 
