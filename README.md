@@ -1,2 +1,2 @@
-# Definity CDN
-This is our internal CDN.
+# CDN
+This is my CDN. Previously owned under DefinityTeam/cdn.
